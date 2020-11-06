@@ -1,7 +1,8 @@
-# Zaptext BackEnd #
+# Globo BackEnd #
 
-Backend da aplicação zaptext.
+Backend do dasafio da globo.
 
-### Wiki do backend ###
+# Documentação das rotas de usuario
 
-* https://bitbucket.org/2potatoes/zaptext-backend/wiki/Home
+[Usuário](https://github.com/AllanPatrickS/Desafio-FrontEnd-Storm-Globo/tree/main/back/wiki/meetings)
+[Encontros](https://github.com/AllanPatrickS/Desafio-FrontEnd-Storm-Globo/tree/main/back/wiki/users)
