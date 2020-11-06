@@ -5,15 +5,21 @@ Desafio de FrontEnd
 
 Para executar o backend execute o seguinte comando:
 
-´´´
-npm start
-´´´
+```
+npm run start
+```
 A lista de rotas pode ser encontada [aqui](https://github.com/AllanPatrickS/Desafio-FrontEnd-Storm-Globo/tree/main/back)
 
 ## FrontEnd
 
 Para executar o frontend, após começar o backend execute o seguinte comando:
 
-´´´
-npm start
-´´´
+```
+npm run start
+```
+
+Para executar os testes do frontend execute o seguinte comando:
+
+```
+npm run test
+```
