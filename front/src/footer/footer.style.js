@@ -3,10 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const FooterStyle = makeStyles((theme) => ({
   bar: {
     backgroundColor: '#333333',
-    top: 'auto',
-    bottom: 0,
     flexGrow: 1,
-    position: 'abosolute'
+    position: 'static'
   },
   orange: {
     color: '#FF8700',

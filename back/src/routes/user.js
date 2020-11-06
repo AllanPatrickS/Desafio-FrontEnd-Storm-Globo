@@ -2,9 +2,8 @@ const controller = require('../controllers/user'),
     model = require('../models/user');
 
 module.exports = function (app) {
-    app.post('/user/create', async function (req, res) {
+    app.post('/user', async function (req, res) {
         const obj = new model(req.body);
-
         const result = await controller.create(obj);
 
         if (result.message === "Algo deu errado por favor tente novamente") {
@@ -20,8 +19,8 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/user/get', async function (req, res) {
-        const result = await controller.getAll(model);
+    app.get('/user/lastupdate', async function (_, res) {
+        const result = await controller.getLastUpdate(model);
 
         if (result.message === "Algo deu errado por favor tente novamente") {
             res.status(400)
@@ -36,10 +35,11 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/user/get/:query', async function (req, res) {
+    app.get(['/user/:page', '/user/:page/:query'], async function (req, res) {
         const query = req.params.query;
+        const page = req.params.page;
 
-        const result = await controller.get(model, query);
+        const result = await controller.get(model, page, query);
 
         if (result.message === "Algo deu errado por favor tente novamente") {
             res.status(400)
@@ -54,7 +54,7 @@ module.exports = function (app) {
         }
     });
 
-    app.patch('/user/update/:id', async function (req, res) {
+    app.patch('/user/:id', async function (req, res) {
         const id = req.params.id;
 
         const result = await controller.update(model, req.body, id);

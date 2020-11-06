@@ -5,6 +5,7 @@ const HeaderStyle = makeStyles((theme) => ({
         backgroundColor: '#F5F5F5',
         flexGrow: 1,
         position: 'static',
+        boxShadow: '0px 0px 16px 0px rgba(0,0,0,0.08)'
     },
     divider: {
         marginBottom: theme.spacing(2),
@@ -68,14 +69,7 @@ const HeaderStyle = makeStyles((theme) => ({
         marginRight: theme.spacing(3),
     },
     changes: {
-        marginLeft: theme.spacing(1),
-    },
-    firstBorderlessIcons: {
-        borderRadius: 5,
-        marginLeft: theme.spacing(1),
-    },
-    borderlessIcons: {
-        borderRadius: 5,
+        marginLeft: theme.spacing(2),
     },
 }));
 

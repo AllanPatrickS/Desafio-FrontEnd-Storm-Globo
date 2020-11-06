@@ -1,8 +1,8 @@
 module.exports.create = function (obj) {
-    return obj.save().then(item => {
+    return obj.save().then(result => {
         return {
             message: "Encontro criado com sucesso",
-            item
+            result
         };
     }).catch(err => {
         return {
@@ -13,25 +13,19 @@ module.exports.create = function (obj) {
 };
 
 module.exports.get = function (model) {
-    return model.findOne().sort('date').exec().then(item => {
-        if (item != null) {
-            let date = new Date(item.date);
+    return model.findOne({}, 'date').sort('date').exec().then(result => {
+        if (result != null) {
+            let date = new Date(result.date);
             const month = ["Janeiro", "Fevereiro", "Maro", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
             date = `${date.getDate()} de ${month[date.getMonth()]} de ${date.getFullYear()} as ${date.getHours()}:${date.getMinutes()}`;
             return {
                 message: "Sucesso",
-                item: {
-                    _id: item._id,
-                    date,
-                    createdAt: item.createdAt,
-                    updatedAt: item.updatedAt,
-                    __v: item.__v
-                }
+                result: date
             }
         } else {
             return {
                 message: "Sucesso",
-                item: null
+                result: null
             }
 
         };
@@ -44,16 +38,16 @@ module.exports.get = function (model) {
 };
 
 module.exports.update = function (model, obj, id) {
-    return model.updateOne({ '_id': id }, obj).exec().then(item => {
-        if (item.nModified > 0) {
+    return model.updateOne({ '_id': id }, obj).exec().then(result => {
+        if (result.nModified > 0) {
             return {
                 message: "Encontro atualizado com sucesso",
-                item
+                result
             };
         } else {
             return {
                 message: "Encontro não encontrado",
-                item
+                result
             };
         }
     }).catch(err => {
@@ -65,16 +59,16 @@ module.exports.update = function (model, obj, id) {
 };
 
 module.exports.delete = function (model, id) {
-    return model.findById({ '_id': id }).deleteOne().exec().then(item => {
-        if (item.deletedCount > 0) {
+    return model.findById({ '_id': id }).deleteOne().exec().then(result => {
+        if (result.deletedCount > 0) {
             return {
                 message: "Encontro removido com sucesso",
-                item
+                result
             };
         } else {
             return {
                 message: "Encontro não encontrado",
-                item
+                result
             };
         }
     }).catch(err => {
