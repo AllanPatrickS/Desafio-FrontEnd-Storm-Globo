@@ -1,29 +1,6 @@
 # Desafio FrontEnd Storm Globo
 FrontEnd Challenge from the globo test.
 
-## BackEnd
-
-Para executar o backend execute o seguinte comando:
-
-```
-npm run start
-```
-A lista de rotas pode ser encontada [aqui](https://github.com/AllanPatrickS/Desafio-FrontEnd-Storm-Globo/tree/main/back)
-
-## FrontEnd
-
-Para executar o frontend, após começar o backend execute o seguinte comando:
-
-```
-npm run start
-```
-
-Para executar os testes do frontend execute o seguinte comando:
-
-```
-npm run test
-```
-
 # How to run 
 + You must have python 17+ installed
 + Install the required dependencies running `npm install` inside the project folder
