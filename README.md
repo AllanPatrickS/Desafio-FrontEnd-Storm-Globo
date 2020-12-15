@@ -1,4 +1,4 @@
-# Desafio FrontEnd Storm Globo
+# FrontEnd Challenge Storm Globo
 FrontEnd Challenge from the globo test.
 
 # How to run 
